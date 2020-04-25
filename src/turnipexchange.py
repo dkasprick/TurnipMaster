@@ -26,6 +26,11 @@ class TurnipExchange():
         WebDriverWait(driver, 10).until(
             EC.visibility_of_any_elements_located((By.CLASS_NAME, "note"))
         )
+        ####CLICK ALL ISLANDS (Website changed to default to Patreon)
+        driver.find_element_by_xpath("/html/body/div/div[2]/div[1]/div[2]/div/button[2]").click()
+        WebDriverWait(driver, 10).until(
+            EC.visibility_of_any_elements_located((By.XPATH, "/html/body/div/div[2]/div[1]/div[2]/div/button[2]"))
+        )
         page_source = driver.page_source
         driver.close()
 
